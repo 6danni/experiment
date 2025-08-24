@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100italic,400italic,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div id="content" class="container-fluid mx-auto" style="width: 800px">
+      <h2>Task 1: Willingness to Pay (WTP)</h2>
+
+      <p>
+        In this task, you’ll review <strong>{{nTrials}}</strong> datasets and
+        assess how much each one is worth to your modeling process.
+      </p>
+
+      <p>For each dataset, you will:</p>
+      <ul>
+        <li>Read a brief performance summary</li>
+        <li>
+          Submit a one-time bid indicating the maximum amount you’d be willing
+          to pay for a license
+        </li>
+      </ul>
+
+      <p>After submitting your bid:</p>
+      <ul>
+        <li>A random price will be drawn</li>
+        <li>
+          If your bid is equal to or greater than that price, you "buy" the
+          dataset and pay the random price
+        </li>
+        <li>
+          If your bid is lower, you do not acquire the dataset and pay nothing
+        </li>
+      </ul>
+
+      <p>
+        After all bids are submitted,
+        <strong>one trial will be randomly selected</strong> for a potential
+        cash bonus. A biased die will be rolled to determine your chance of
+        receiving the bonus, which depends on how much the selected dataset
+        improves model accuracy. You can earn
+        <strong>up to ${{maxBonus}}</strong>.
+      </p>
+
+      <p>
+        This mechanism is designed to promote honest bidding. Your best strategy
+        is to bid the maximum amount you genuinely believe each dataset is worth
+        to your modeling process.
+      </p>
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+
+    <script>
+      window.App ||= {};
+      window.App.scenario = {{ scenario | tojson }};
+      window.App.pid = {{ pid | tojson }};
+      window.App.scenario_id = {{ scenario_id | tojson }};
+      console.log("Scenarios:", window.App.scenario_id);
+      const scenarios = window.App.scenario;
+      scenario = window.App.scenario;
+
+      const titleContainer = document.getElementById("scenario-title");
+      const h2 = document.createElement("h2");
+      h2.textContent = scenario.title;
+      titleContainer.appendChild(h2);
+
+      const textContainer = document.getElementById("scenario-text");
+      scenario.text.forEach((paragraph) => {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        textContainer.appendChild(p);
+      });
+      function goToNextPage() {
+        window.location.href = {{ url_for_pid('main.page_2_WTP_task_trial') | tojson }};
+      }
+    </script>
+  </body>
+</html>

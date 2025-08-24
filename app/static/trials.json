@@ -1,0 +1,1802 @@
+{
+  "catalog": {
+    "trials": {
+      "t001": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t002": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t003": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t004": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t005": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t006": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t007": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t008": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t009": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t010": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t011": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t012": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t013": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t014": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t015": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t016": {
+        "recommendation": "65",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t017": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t018": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t019": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t020": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t021": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t022": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t023": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t024": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t025": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t026": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t027": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t028": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t029": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t030": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t031": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t032": {
+        "recommendation": "65",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t033": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t034": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t035": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t036": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t037": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t038": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t039": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t040": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t041": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t042": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t043": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t044": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t045": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t046": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t047": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t048": {
+        "recommendation": "65",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t049": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t050": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t051": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t052": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t053": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t054": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t055": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t056": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t057": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t058": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t059": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t060": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t061": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t062": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t063": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t064": {
+        "recommendation": "65",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t065": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t066": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t067": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t068": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t069": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t070": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t071": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t072": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t073": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t074": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t075": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t076": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t077": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t078": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t079": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t080": {
+        "recommendation": "75",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t081": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t082": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t083": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t084": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t085": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t086": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t087": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t088": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t089": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t090": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t091": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t092": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t093": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t094": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t095": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t096": {
+        "recommendation": "75",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t097": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t098": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t099": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t100": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t101": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t102": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t103": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t104": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t105": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t106": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t107": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t108": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t109": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t110": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t111": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t112": {
+        "recommendation": "75",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t113": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t114": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t115": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t116": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t117": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t118": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t119": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t120": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t121": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t122": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t123": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t124": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t125": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t126": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t127": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t128": {
+        "recommendation": "75",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t129": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t130": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t131": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t132": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t133": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t134": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t135": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t136": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t137": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t138": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t139": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t140": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t141": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t142": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t143": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t144": {
+        "recommendation": "85",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t145": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t146": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t147": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t148": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t149": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t150": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t151": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t152": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t153": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t154": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t155": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t156": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t157": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t158": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t159": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t160": {
+        "recommendation": "85",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t161": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t162": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t163": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t164": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t165": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t166": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t167": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t168": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t169": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t170": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t171": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t172": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t173": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t174": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t175": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t176": {
+        "recommendation": "85",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t177": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t178": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t179": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t180": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t181": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t182": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t183": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t184": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t185": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t186": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t187": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t188": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t189": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t190": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t191": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t192": {
+        "recommendation": "85",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t193": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t194": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t195": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t196": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t197": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t198": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t199": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t200": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t201": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t202": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t203": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t204": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t205": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t206": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t207": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t208": {
+        "recommendation": "95",
+        "frequency": "Daily",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t209": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t210": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t211": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t212": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t213": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t214": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t215": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t216": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t217": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t218": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t219": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t220": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t221": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t222": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t223": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t224": {
+        "recommendation": "95",
+        "frequency": "Weekly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t225": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t226": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t227": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t228": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t229": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t230": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t231": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t232": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t233": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t234": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t235": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t236": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t237": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t238": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t239": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t240": {
+        "recommendation": "95",
+        "frequency": "Monthly",
+        "missing": "20",
+        "coverage": "35"
+      },
+      "t241": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "20"
+      },
+      "t242": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "25"
+      },
+      "t243": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "30"
+      },
+      "t244": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "5",
+        "coverage": "35"
+      },
+      "t245": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "20"
+      },
+      "t246": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "25"
+      },
+      "t247": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "30"
+      },
+      "t248": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "10",
+        "coverage": "35"
+      },
+      "t249": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "20"
+      },
+      "t250": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "25"
+      },
+      "t251": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "30"
+      },
+      "t252": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "15",
+        "coverage": "35"
+      },
+      "t253": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "20"
+      },
+      "t254": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "25"
+      },
+      "t255": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "30"
+      },
+      "t256": {
+        "recommendation": "95",
+        "frequency": "Quarterly",
+        "missing": "20",
+        "coverage": "35"
+      }
+    }
+  },
+  "assignmentIndex": {
+    "trialCounts": {
+      "t001": 0,
+      "t002": 0,
+      "t003": 0,
+      "t004": 0,
+      "t005": 0,
+      "t006": 0,
+      "t007": 0,
+      "t008": 0,
+      "t009": 0,
+      "t010": 0,
+      "t011": 0,
+      "t012": 0,
+      "t013": 0,
+      "t014": 0,
+      "t015": 0,
+      "t016": 0,
+      "t017": 0,
+      "t018": 0,
+      "t019": 0,
+      "t020": 0,
+      "t021": 0,
+      "t022": 0,
+      "t023": 0,
+      "t024": 0,
+      "t025": 0,
+      "t026": 0,
+      "t027": 0,
+      "t028": 0,
+      "t029": 0,
+      "t030": 0,
+      "t031": 0,
+      "t032": 0,
+      "t033": 0,
+      "t034": 0,
+      "t035": 0,
+      "t036": 0,
+      "t037": 0,
+      "t038": 0,
+      "t039": 0,
+      "t040": 0,
+      "t041": 0,
+      "t042": 0,
+      "t043": 0,
+      "t044": 0,
+      "t045": 0,
+      "t046": 0,
+      "t047": 0,
+      "t048": 0,
+      "t049": 0,
+      "t050": 0,
+      "t051": 0,
+      "t052": 0,
+      "t053": 0,
+      "t054": 0,
+      "t055": 0,
+      "t056": 0,
+      "t057": 0,
+      "t058": 0,
+      "t059": 0,
+      "t060": 0,
+      "t061": 0,
+      "t062": 0,
+      "t063": 0,
+      "t064": 0,
+      "t065": 0,
+      "t066": 0,
+      "t067": 0,
+      "t068": 0,
+      "t069": 0,
+      "t070": 0,
+      "t071": 0,
+      "t072": 0,
+      "t073": 0,
+      "t074": 0,
+      "t075": 0,
+      "t076": 0,
+      "t077": 0,
+      "t078": 0,
+      "t079": 0,
+      "t080": 0,
+      "t081": 0,
+      "t082": 0,
+      "t083": 0,
+      "t084": 0,
+      "t085": 0,
+      "t086": 0,
+      "t087": 0,
+      "t088": 0,
+      "t089": 0,
+      "t090": 0,
+      "t091": 0,
+      "t092": 0,
+      "t093": 0,
+      "t094": 0,
+      "t095": 0,
+      "t096": 0,
+      "t097": 0,
+      "t098": 0,
+      "t099": 0,
+      "t100": 0,
+      "t101": 0,
+      "t102": 0,
+      "t103": 0,
+      "t104": 0,
+      "t105": 0,
+      "t106": 0,
+      "t107": 0,
+      "t108": 0,
+      "t109": 0,
+      "t110": 0,
+      "t111": 0,
+      "t112": 0,
+      "t113": 0,
+      "t114": 0,
+      "t115": 0,
+      "t116": 0,
+      "t117": 0,
+      "t118": 0,
+      "t119": 0,
+      "t120": 0,
+      "t121": 0,
+      "t122": 0,
+      "t123": 0,
+      "t124": 0,
+      "t125": 0,
+      "t126": 0,
+      "t127": 0,
+      "t128": 0,
+      "t129": 0,
+      "t130": 0,
+      "t131": 0,
+      "t132": 0,
+      "t133": 0,
+      "t134": 0,
+      "t135": 0,
+      "t136": 0,
+      "t137": 0,
+      "t138": 0,
+      "t139": 0,
+      "t140": 0,
+      "t141": 0,
+      "t142": 0,
+      "t143": 0,
+      "t144": 0,
+      "t145": 0,
+      "t146": 0,
+      "t147": 0,
+      "t148": 0,
+      "t149": 0,
+      "t150": 0,
+      "t151": 0,
+      "t152": 0,
+      "t153": 0,
+      "t154": 0,
+      "t155": 0,
+      "t156": 0,
+      "t157": 0,
+      "t158": 0,
+      "t159": 0,
+      "t160": 0,
+      "t161": 0,
+      "t162": 0,
+      "t163": 0,
+      "t164": 0,
+      "t165": 0,
+      "t166": 0,
+      "t167": 0,
+      "t168": 0,
+      "t169": 0,
+      "t170": 0,
+      "t171": 0,
+      "t172": 0,
+      "t173": 0,
+      "t174": 0,
+      "t175": 0,
+      "t176": 0,
+      "t177": 0,
+      "t178": 0,
+      "t179": 0,
+      "t180": 0,
+      "t181": 0,
+      "t182": 0,
+      "t183": 0,
+      "t184": 0,
+      "t185": 0,
+      "t186": 0,
+      "t187": 0,
+      "t188": 0,
+      "t189": 0,
+      "t190": 0,
+      "t191": 0,
+      "t192": 0,
+      "t193": 0,
+      "t194": 0,
+      "t195": 0,
+      "t196": 0,
+      "t197": 0,
+      "t198": 0,
+      "t199": 0,
+      "t200": 0,
+      "t201": 0,
+      "t202": 0,
+      "t203": 0,
+      "t204": 0,
+      "t205": 0,
+      "t206": 0,
+      "t207": 0,
+      "t208": 0,
+      "t209": 0,
+      "t210": 0,
+      "t211": 0,
+      "t212": 0,
+      "t213": 0,
+      "t214": 0,
+      "t215": 0,
+      "t216": 0,
+      "t217": 0,
+      "t218": 0,
+      "t219": 0,
+      "t220": 0,
+      "t221": 0,
+      "t222": 0,
+      "t223": 0,
+      "t224": 0,
+      "t225": 0,
+      "t226": 0,
+      "t227": 0,
+      "t228": 0,
+      "t229": 0,
+      "t230": 0,
+      "t231": 0,
+      "t232": 0,
+      "t233": 0,
+      "t234": 0,
+      "t235": 0,
+      "t236": 0,
+      "t237": 0,
+      "t238": 0,
+      "t239": 0,
+      "t240": 0,
+      "t241": 0,
+      "t242": 0,
+      "t243": 0,
+      "t244": 0,
+      "t245": 0,
+      "t246": 0,
+      "t247": 0,
+      "t248": 0,
+      "t249": 0,
+      "t250": 0,
+      "t251": 0,
+      "t252": 0,
+      "t253": 0,
+      "t254": 0,
+      "t255": 0,
+      "t256": 0
+    }
+  }
+}

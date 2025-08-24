@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100italic,400italic,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div id="content" class="container-fluid mx-auto" style="width: 800px">
+      <h1>Your Scenario</h1>
+      <div class="scenario-title" id="scenario-title"></div>
+      <div class="scenario-description" id="scenario-text"></div>
+      <!-- <h2>Initial Vendor Pick</h2>
+
+      <p>
+        Your team only has access to a dataset previously acquired from another
+        project. You begin exploring third-party data marketplaces, but the
+        listings are vague — each vendor simply says “contact us for details”
+        with minimal upfront information.
+      </p>
+
+      <p>
+        After a round of emails and sales calls, you learn that most vendors
+        offer a handful of datasets and claim acceptable quality: stability
+        checks passed, decent predictive power, etc.
+      </p>
+
+      <p>
+        While some vendors are willing to share sample data, the lack of a
+        working model and the high communication overhead make it inefficient to
+        evaluate every option in depth.
+      </p>
+
+      <p>
+        As a result, you decide to choose one data provider to work with
+        initially. You’ll evaluate their datasets in more detail once selected,
+        and iterate from there.
+      </p> -->
+
+      <p>
+        Your best strategy is to enter the maximum amount you genuinely believe
+        the dataset is worth.
+      </p>
+      <div id="dataset-info"></div>
+
+      <h4>Prompt:</h4>
+      <p>
+        <em
+          >How much would you be willing to pay for a license to use this
+          dataset in your modeling process?<br />
+          (Assume a one-time license fee.)</em
+        >
+      </p>
+      <input
+        type="number"
+        id="user-response"
+        placeholder="Enter a bid (0–1000)"
+        min="0"
+        max="1000"
+        step="1"
+      />
+      <button onclick="submitBid()">Next</button>
+      <button onclick="skipBid()">Skip</button>
+    </div>
+    <script id="trials-page-data" type="application/json">
+      {{ {
+          "pid": pid,
+          "scenario_id": scenario_id,
+          "scenario": scenario,
+          "trial_index": trial_index,
+          "total_trials": total_trials,
+          "trial_id": trial_id,
+          "trial": trial
+      } | tojson }}
+    </script>
+
+    <script>
+            const TRIALS_DATA = JSON.parse(
+              document.getElementById("trials-page-data").textContent
+            );
+            const {
+              pid,
+              scenario_id,
+              scenario,
+              trial_index,
+              total_trials,
+              trial_id,
+              trial,
+            } = TRIALS_DATA;
+
+            const titleContainer = document.getElementById("scenario-title");
+            //   document.getElementById("scenario-title").innerText = scenario.title;
+            const h2 = document.createElement("h2");
+            h2.textContent = scenario.title;
+            titleContainer.appendChild(h2);
+
+            const textContainer = document.getElementById("scenario-text");
+            scenario.text.forEach((paragraph) => {
+              const p = document.createElement("p");
+              p.textContent = paragraph;
+              textContainer.appendChild(p);
+            });
+
+            const info = document.getElementById("dataset-info");
+        info.innerHTML = `
+          <h2>Dataset details for trial ${trial_index}</h2>
+          <ul>
+            <li><strong>Recommended by:</strong> ${trial.recommendation ?? ""}</li>
+            <li><strong>Collection frequency:</strong> ${trial.frequency ?? ""}</li>
+            <li><strong>Missing data rate:</strong> ${trial.missing ?? ""}</li>
+            <li><strong>Coverage:</strong> ${trial.coverage ?? ""}</li>
+          </ul>
+        `;
+
+        async function submitBid() {
+          const raw = document.getElementById("user-response").value.trim();
+          const bid = Number(raw);
+          if (!Number.isFinite(bid) || bid < 0 || bid > 1000) {
+            alert("Enter a number between 0 and 1000");
+            return;
+          }
+
+          // Save to backend
+          const res = await fetch("/api/trials", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({ pid, scenario_id, trial: trial_index, bid })
+          });
+          if (!res.ok) {
+            alert("Could not save. Please try again.");
+            return;
+          }
+
+          // Advance: reload same route for next trial, or finish
+          if (trial_index < total_trials) {
+            window.location.href = {{ url_for_pid('main.page_2_WTP_task_trial') | tojson }};
+          } else {
+            window.location.href = {{ url_for_pid('main.page_3_LLM_task') | tojson }};
+          }
+      }
+      function skipBid() {
+        window.location.href = {{ url_for_pid('main.page_3_LLM_task') | tojson }};
+      }
+    </script>
+  </body>
+</html>

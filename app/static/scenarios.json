@@ -1,0 +1,32 @@
+{
+  "s1": {
+    "title": "Scenario 1: Initial Vendor Pick",
+    "text": [
+      "Your team only has access to a dataset previously acquired from another project. You begin exploring third-party data marketplaces, but the listings are vague—each vendor simply says “contact us for details” with minimal upfront information.",
+      "After a round of emails and sales calls, you learn that most vendors offer a handful of datasets and claim acceptable quality: stability checks passed, decent predictive power, etc.",
+      "While some vendors are willing to share sample data, the lack of a working model and the high communication overhead make it inefficient to evaluate every option in depth.",
+      "As a result, you decide to choose one data provider to work with initially. You’ll evaluate their datasets in more detail once selected, and iterate from there."
+    ]
+  },
+  "s2": {
+    "title": "Scenario 2: Poor model accuracy → need richer features",
+    "text": [
+      "Your team has been working with an initial third-party dataset to develop a machine learning model. The model trains without errors, but both training and test performance are similarly poor. ",
+      "You consult with colleagues and other data scientists. One of them suggests that incorporating additional features, such as credit utilization, employment history, digital engagement behavior, or alternative financial signals, might improve model performance.",
+      "You return to the same vendor and inquire about expanded dataset options. The vendor offers an upgraded version of the dataset that includes a richer set of attributes, covering more behavioral and financial dimensions."
+    ]
+  },
+  "s3": {
+    "title": "Scenario 3: Need finer temporal resolution",
+    "text": [
+      "Your team has developed a baseline machine learning model. However, after several rounds of evaluation, you realize that the model often fails to detect recent changes in user behavior. Someone on your team suggests that the dataset may not have been collected frequently enough. The current monthly update cycle could be smoothing over time-sensitive patterns. You consult with the vendor again and learn that they offer a more granular version of the dataset, collected on a daily basis. This version includes finer temporal resolution for key behavioral and transactional features, giving your team better visibility into short-term shifts in user behavior."
+    ]
+  },
+  "s4": {
+    "title": "Scenario 4: Cut data-cleaning overhead",
+    "text": [
+      "At this point, your team has a functional baseline model, and model performance is acceptable. However, in reviewing the development process, you notice a major bottleneck: your team spent a disproportionate amount of time cleaning the raw dataset instead of building and refining the model.",
+      "Now that the initial model is deployed, you're looking to optimize the data workflow for future iterations. Your goal is to reduce overhead and accelerate future updates by ensuring cleaner, more standardized data inputs from the start. To reduce friction in future updates, you reach out to the vendor to negotiate improvements to how the data is delivered. The vendor responds that such improvements could be arranged, but may involve additional internal effort and cost on their side."
+    ]
+  }
+}

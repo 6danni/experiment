@@ -1,0 +1,206 @@
+/* experiment and practice page */
+#frame {
+  /* max-width: 830px; */
+  max-width: 60%;
+  margin: auto;
+}
+#frame.survey {
+  /* max-width: 750px; */
+  max-width: 60%;
+  margin: auto;
+}
+hr {
+  clear: both;
+}
+
+/* two-way table related */
+#stim table {
+  /* this stuff will override bootstrap */
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 10px;
+  max-width: 250px !important;
+  max-height: 200px !important;
+}
+/* tr#r0, tr#r1 {
+    height: fit-content;
+} */
+th {
+  vertical-align: middle !important;
+  padding: 5px !important;
+}
+td.chart {
+  vertical-align: top !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  min-width: 90px; /* impacts text condition only? */
+  /* max-height: 40px; */
+}
+th.center,
+td.center,
+th.chart {
+  text-align: center;
+}
+th.num,
+td.num {
+  text-align: right;
+}
+/* tr td {
+    min-width: 275px;
+    max-width: 275px;
+    width: 275px;
+    vertical-align: bottom;
+}  */
+td svg {
+  overflow: visible;
+}
+.clickme {
+  cursor: pointer;
+}
+th.clickme {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  border: 1px solid transparent;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+th.clickme:focus,
+th.clickme:active:focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+th.clickme:hover,
+th.clickme:focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+  text-decoration: none;
+}
+th.clickme:active {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+caption {
+  caption-side: top;
+}
+
+/* tables for feedback*/
+/* table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 2px;
+}
+td {
+    text-align: right;
+} */
+
+.differences {
+  background-color: #fcce25;
+}
+
+/* response color coding */
+.imputed {
+  /* background-color: #b2df8a; */
+  /* background-color: #44bf70; */
+  /* background-color: #fcce25; */
+  background-color: #f9fc9d;
+}
+.disease {
+  color: #cc4778;
+}
+
+/* stimulus image */
+/* .scale-width {
+    width: 100%;
+} */
+
+/* feedback */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#feeback-catch {
+  /* visibility: hidden;  */
+  opacity: 0;
+  /* transition: all 0.5s ease; */
+}
+#catch.show {
+  color: crimson;
+  /* visibility: visible;  */
+  animation-name: fadeOut;
+  animation-delay: 2.5s;
+  animation-duration: 2s;
+}
+/* #feedback-txt.success { color text green when they succeed 
+    color: #4daf4a;
+} */
+.padded {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* for survey */
+.spaced {
+  padding-right: 20px;
+}
+.survey-item {
+  padding-top: 20px;
+}
+
+/** overlaid div when screen size is too small **/
+.resize-container-hidden {
+  display: initial;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background: black;
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+@media only screen and (min-width: 750px) {
+  .resize-container-hidden {
+    display: none;
+  }
+}
+.resize-container-hidden p {
+  color: white;
+}
+body {
+  overflow: hidden;
+}
+@media only screen and (min-width: 750px) {
+  body {
+    overflow: auto;
+  }
+}
+
+/* fade div for unavailable question */
+fieldset.fade {
+  opacity: 0.3;
+}
+
+#user-response {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}

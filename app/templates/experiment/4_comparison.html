@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100italic,400italic,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div id="content" class="container-fluid mx-auto" style="width: 800px">
+      <h2>Forced Comparison</h2>
+
+      <p>
+        In this task, you’ll continue working within the same scenario. This
+        time, we’ll present you with <strong>two datasets at a time</strong>,
+        and you’ll indicate which one you prefer for your modeling process.
+      </p>
+
+      <p>
+        This method is known as a <strong>forced pairwise comparison</strong>.
+        It helps us understand your preferences even when it’s difficult to
+        assign exact prices or ratings to each dataset.
+      </p>
+
+      <h3>What you’ll do:</h3>
+      <ul>
+        <li>Review two dataset summaries presented side by side</li>
+        <li>Select the dataset you prefer for improving your model</li>
+        <li>No ties — you must choose one dataset per round</li>
+      </ul>
+
+      <h3>Why this matters:</h3>
+      <p>
+        Your choices will allow us to infer a
+        <strong>relative ranking</strong> of all datasets based on your
+        preferences. This ranking can help identify which types of data are most
+        valuable to decision-makers like you.
+      </p>
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+
+    <script>
+      const selected = localStorage.getItem("selected") || "1";
+      fetch("/scenarios.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const scenario = data[selected];
+          console.log(data);
+        });
+
+      function goToNextPage() {
+         window.location.href = {{ url_for_pid('main.page_4_comparison_trial') | tojson }};
+      }
+    </script>
+  </body>
+</html>

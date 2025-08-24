@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300,300italic,100italic,400italic,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div id="content" class="container-fluid mx-auto" style="width: 800px">
+      <h1>Your Scenario</h1>
+      <div class="scenario-title" id="scenario-title"></div>
+      <div class="scenario-description" id="scenario-text"></div>
+      <!-- <h2>Initial Vendor Pick</h2>
+
+      <p>
+        Your team only has access to a dataset previously acquired from another
+        project. You begin exploring third-party data marketplaces, but the
+        listings are vague — each vendor simply says “contact us for details”
+        with minimal upfront information.
+      </p>
+
+      <p>
+        After a round of emails and sales calls, you learn that most vendors
+        offer a handful of datasets and claim acceptable quality: stability
+        checks passed, decent predictive power, etc.
+      </p>
+
+      <p>
+        While some vendors are willing to share sample data, the lack of a
+        working model and the high communication overhead make it inefficient to
+        evaluate every option in depth.
+      </p>
+
+      <p>
+        As a result, you decide to choose one data provider to work with
+        initially. You’ll evaluate their datasets in more detail once selected,
+        and iterate from there.
+      </p> -->
+
+      <p>
+        <em
+          >Don’t worry if you forget this scenario — it will be shown again
+          during each task and trial.</em
+        >
+      </p>
+
+      <button onclick="goToNextPage()">Next</button>
+    </div>
+
+    <script>
+      window.App ||= {};
+      window.App.scenario = {{ scenario | tojson }};
+      window.App.pid = {{ pid | tojson }};
+      window.App.scenario_id = {{ scenario_id | tojson }};
+      console.log("Scenarios:", window.App.scenario_id);
+      const scenarios = window.App.scenario;
+      scenario = window.App.scenario;
+      const titleContainer = document.getElementById("scenario-title");
+      const h2 = document.createElement("h2");
+      h2.textContent = scenario.title;
+      titleContainer.appendChild(h2);
+
+      const textContainer = document.getElementById("scenario-text");
+      scenario.text.forEach((paragraph) => {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        textContainer.appendChild(p);
+      });
+      function goToNextPage() {
+        window.location.href = {{ url_for_pid('main.page_2_WTP_task') | tojson }};
+      }
+    </script>
+  </body>
+</html>
