@@ -2,7 +2,7 @@
 from flask import request, jsonify
 from openai import OpenAI
 from app.main import bp
-from .firebase import ref, server_ts, ASSIGN_PATH
+from app.main.firebase import ref, server_ts, ASSIGN_PATH
 from config import Config
 
 def _messages_path(pid: str) -> str:

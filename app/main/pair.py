@@ -1,6 +1,6 @@
 # helpers (put in services or routes file)
 import random
-from .firebase import ref, server_ts, PARTIC_PATH, TRIALS_PATH, SCENARIOS_PATH, ASSIGN_PATH
+from app.main.firebase import ref, server_ts, PARTIC_PATH, TRIALS_PATH, SCENARIOS_PATH, ASSIGN_PATH
 from firebase_admin import db as rtdb
 
 # ---- Comparison trial generator (stored under /assignments/{pid}/comparison_trails)
@@ -8,6 +8,7 @@ RECOMMENDATIONS = ["65", "75", "85", "95"]
 FREQUENCIES     = ["Daily", "Weekly", "Monthly", "Quarterly"]
 MISSING_RATES   = ["5", "10", "15", "20"]
 COVERAGES       = ["20", "25", "30", "35"]
+COMP_ATTR_COUNTS = "/metrics/comparison_attr_counts_by_scenario"
 
 def _ensure_comparison_trials(pid: str, scenario_id: str, n: int = 20) -> None:
     """
@@ -17,7 +18,6 @@ def _ensure_comparison_trials(pid: str, scenario_id: str, n: int = 20) -> None:
     """
     base = f"{ASSIGN_PATH}/{pid}/comparison_trials"
     existing = rtdb.reference(base).get()
-    # print(existing)
     if existing:
         return
 
@@ -65,20 +65,5 @@ def _trial_at(trials_node, trial_index: int):
         idx0 = trial_index - 1
         # print(trials_node[idx0])
         return ((trials_node[idx0] or {}) if 0 <= idx0 < total else {}), total
-
-    # if isinstance(trials_node, dict):
-    #     total = len(trials_node)
-    #     trial = trials_node.get(str(trial_index)) or trials_node.get(trial_index)
-    #     if trial is not None:
-    #         return (trial or {}), total
-    #     # fallback: numeric sort if keys are weird
-    #     try:
-    #         items = sorted(trials_node.items(), key=lambda kv: int(kv[0]))
-    #         idx0 = trial_index - 1
-    #         if 0 <= idx0 < len(items):
-    #             return (items[idx0][1] or {}), total
-    #     except Exception:
-    #         pass
-    #     return {}, total
 
     return {}, 0

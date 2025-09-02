@@ -99,23 +99,67 @@
         });
       })();
 
+      function toInt(val) {
+        if (val == null) return null;
+        if (typeof val === "number") return Math.round(val);
+        const s = String(val).trim().replace(/%/g, "");
+        const num = Number(s);
+        return Number.isFinite(num) ? Math.round(num) : null;
+      }
+
+      function formatPercent(val) {
+        const n = val;
+        return n == null ? "" : `${n}%`;
+      }
+
+      function plural(n, word) {
+        return `${n} ${word}${n === 1 ? "" : "s"}`;
+      }
+
+      function formatFrequency(val) {
+        if (val == null || val === "") return "";
+
+        // Prefer explicit label if backend ever sends it
+        if (typeof val === "string" && /day/i.test(val)) return val;
+
+        // // Named frequency?
+        // const nameMatch = typeof val === "string" && FREQ_NAME_TO_DAYS[val];
+        // if (nameMatch)
+        //   return `${val} (${plural(FREQ_NAME_TO_DAYS[val], "day")})`;
+
+        // Numeric days (e.g., 7 or "7")
+        const n = toInt(val);
+        if (n != null) {
+          // const name = DAYS_TO_FREQ_NAME[String(n)];
+          return name ? `${name} (${plural(n, "day")})` : plural(n, "day");
+        }
+
+        // Fallback: show raw
+        return String(val);
+      }
+
       // Utility to render one dataset card
       function cardHTML(label, data) {
         console.log(data);
+        const rec =
+          data.recommendation_label ?? formatPercent(data.recommendation);
+        const freq =
+          data.frequency_label ??
+          formatFrequency(data.frequency ?? data.frequency_days);
+        const miss = data.missing_label ?? formatPercent(data.missing);
+        const cov = data.coverage_label ?? formatPercent(data.coverage);
         return `
         <div class="dataset-card" data-label="${label}">
-          <h3>Dataset ${label}</h3>
-          <ul>
-            <li><strong>Recommended by:</strong> ${
-              data.recommendation ?? ""
-            }</li>
-            <li><strong>Collection frequency:</strong> ${
-              data.frequency ?? ""
-            }</li>
-            <li><strong>Missing data rate:</strong> ${data.missing ?? ""}</li>
-            <li><strong>Coverage:</strong> ${data.coverage ?? ""}</li>
-          </ul>
-          <button class="btn btn-primary btn-wide" data-choose="${label}">Choose Dataset ${label}</button>
+        <h3>Dataset ${label}</h3>
+        <ul>
+          <li><strong>Recommendation:</strong> ${rec}</li>
+          <li><strong>Frequency:</strong> ${freq}</li>
+          <li><strong>Missing data rate:</strong> ${miss}</li>
+          <li><strong>Coverage:</strong> ${cov}</li>
+        </ul>
+        <button class="btn btn-primary btn-wide" data-choose="${label}">
+          Choose Dataset ${label}
+        </button>
         </div>`;
       }
 

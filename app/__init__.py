@@ -12,6 +12,7 @@ import firebase_admin
 from firebase_admin import credentials, db as rtdb
 from dotenv import load_dotenv
 
+
 # db = SQLAlchemy()
 # migrate = Migrate()
 bootstrap = Bootstrap()
@@ -28,10 +29,15 @@ def create_app(config_class=Config):
     bootstrap.init_app(app)
     moment.init_app(app)
     print(os.path.dirname(os.path.abspath(__file__)))
+    
+    cred_json = os.environ.get("FIREBASE_CREDENTIALS")
+    db_url = os.environ.get("FIREBASE_DB_URL")
 
     # init firebase (if not already initialized)
     if (not len(firebase_admin._apps)):
         cred = credentials.Certificate(Config.FIREBASE_SECRET_PATH)
+        if not cred:
+            cred = credentials.Certificate(cred_json)
         # cred = credentials.Certificate('./secret.json')
         # cred = credentials.Certificate(Config.FIREBASE_SECRET)
         firebase_app = firebase_admin.initialize_app(cred, {
