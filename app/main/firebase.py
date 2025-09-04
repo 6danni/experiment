@@ -7,7 +7,7 @@ TRIALS_PATH    = "/catalog/trials"
 COUNTS_SCEN    = "/metrics/scenario_counts"
 COUNTS_TRIAL   = "/metrics/trial_counts"
 ASSIGN_PATH    = "/assignments"
-PARTIC_PATH    = "/participants"
+PARTIC_PATH    = "/results"
 
 def server_ts():
     """Realtime Database server timestamp sentinel."""

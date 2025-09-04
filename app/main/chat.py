@@ -37,7 +37,7 @@ def llm_send():
         resp = client.responses.create(
             prompt={
                 "id": "pmpt_68a792c45f448190bf767ed4133e253f0aedd092065c9099",
-                "version": "4",
+                "version": "9",
                 # "inputs": {"user_input": user_text, "pid": pid, "scenario_id": scenario_id}
             }
             # If your Prompt does NOT specify a default model, you may need:

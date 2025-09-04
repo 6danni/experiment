@@ -5,7 +5,7 @@ import math
 import random
 from typing import Any, Dict, List, Tuple, Sequence, Optional
 from firebase_admin import db as rtdb
-from app.main.firebase import server_ts, ASSIGN_PATH
+from app.main.firebase import server_ts, ASSIGN_PATH, PARTIC_PATH
 from scipy.stats import qmc 
 
 # Discrete levels

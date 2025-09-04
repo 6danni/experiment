@@ -11,6 +11,7 @@ from config import Config
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db as rtdb
+from app.main.demographics import validate_demo
 # from app import db
 # from app.models import User, Post
 from app.main import bp
@@ -453,3 +454,42 @@ def save_pref():
     return jsonify(ok=True), 200
 
 
+@bp.route("/5_demographics", methods=["GET", "POST"])
+def page_5_demographics():
+    if request.method == "POST":
+        # Accept JSON (from fetch) or form-encoded (from a normal form POST)
+        data = request.get_json(silent=True) or request.form.to_dict(flat=True)
+        clean, errors = validate_demo(data)
+        if errors:
+            return jsonify({"ok": False, "errors": errors}), 400
+
+        pid = clean["pid"]
+        # If PID present, write under that participant; else push under /demographics
+        if pid:
+            rtdb.reference(f"/demographics/{pid}").set(clean)
+            key = pid
+        else:
+            key = rtdb.reference("/demographics").push(clean).key
+
+        return jsonify({"ok": True, "id": key})
+
+    # GET → render page
+    pid = request.args.get("pid")
+    if not pid:
+        return redirect(url_for("main.page_1_scenario"), code=302)
+
+    scenario_id, trial_ids, comparison_trials = get_assignment(pid)
+    if not scenario_id:
+        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=30)
+
+    scenario = rtdb.reference(f"{SCENARIOS_PATH}/{scenario_id}").get() or {}
+
+    # IMPORTANT: do NOT call any save function here; just render the page.
+    return render_template(
+        "experiment/5_demographics.html",
+        pid=pid,
+        scenario_id=scenario_id,
+        scenario=scenario,
+        trial_ids=trial_ids,
+        total_trials=len(trial_ids),
+    )
