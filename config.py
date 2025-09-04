@@ -39,3 +39,6 @@ class Config(object):
     OPENAI_PROMPT_ID='pmpt_68a792c45f448190bf767ed4133e253f0aedd092065c9099'
     OPENAI_PROMPT_VERSION=9
     OPENAI_MODEL='gpt-4.1-mini'
+    
+    
+    

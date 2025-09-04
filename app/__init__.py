@@ -30,12 +30,13 @@ def create_app(config_class=Config):
     moment.init_app(app)
     print(os.path.dirname(os.path.abspath(__file__)))
     
-    cred_json = os.environ.get("FIREBASE_CREDENTIALS")
+    cred_json = os.environ["FIREBASE_SERVICE_ACCOUNT"]
     db_url = os.environ.get("FIREBASE_DB_URL")
 
     # init firebase (if not already initialized)
     if (not len(firebase_admin._apps)):
-        cred = credentials.Certificate(Config.FIREBASE_SECRET_PATH)
+        # cred = credentials.Certificate(Config.FIREBASE_SECRET_PATH)
+        cred = credentials.Certificate(json.loads(cred_json))
         if not cred:
             cred = credentials.Certificate(cred_json)
         # cred = credentials.Certificate('./secret.json')
