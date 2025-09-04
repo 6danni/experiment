@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Demographics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <h1>About You</h1>
+    <form id="demo-form" novalidate>
+      <input type="hidden" id="pid" name="pid" value="{{ pid }}" />
+
+      <label>Age group</label>
+      <select id="age_group" name="age_group">
+        <option>18-24</option>
+        <option>25-34</option>
+        <option>35-44</option>
+        <option>45-54</option>
+        <option>55-64</option>
+        <option>65+</option>
+      </select>
+
+      <label>Gender</label>
+      <select id="gender" name="gender">
+        <option>Female</option>
+        <option>Male</option>
+        <option>Non-binary</option>
+        <option>Prefer not to say</option>
+        <option>Self-describe</option>
+      </select>
+
+      <label>Self description</label>
+      <input type="text" id="gender_text" name="gender_text" />
+
+      <label>Years with data</label>
+      <input
+        type="number"
+        id="years_with_data"
+        name="years_with_data"
+        step="0.1"
+      />
+
+      <label>Data frequency</label>
+      <select id="data_frequency" name="data_frequency">
+        <option>Never</option>
+        <option>Rarely</option>
+        <option>Every few months</option>
+        <option>Monthly</option>
+        <option>Weekly</option>
+        <option>Multiple times per week</option>
+      </select>
+
+      <button type="submit" id="submit_btn">Submit</button>
+      <div id="success" class="hidden">Saved!</div>
+    </form>
+
+    <script>
+      document
+        .getElementById("demo-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const btn = document.getElementById("submit_btn");
+          btn.disabled = true;
+
+          const payload = {
+            pid: document.getElementById("pid").value || undefined,
+            age_group: document.getElementById("age_group").value,
+            gender: document.getElementById("gender").value,
+            gender_text: document.getElementById("gender_text").value,
+            years_with_data: document.getElementById("years_with_data").value,
+            data_frequency: document.getElementById("data_frequency").value,
+          };
+
+          try {
+            const res = await fetch("/5_demographics", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+
+            if (res.ok) {
+              document.getElementById("success").classList.remove("hidden");
+            } else {
+              alert("Server error while saving");
+            }
+          } catch (err) {
+            alert("Network error");
+          } finally {
+            btn.disabled = false;
+          }
+        });
+    </script>
+  </body>
+</html>
