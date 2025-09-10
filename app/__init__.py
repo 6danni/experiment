@@ -30,7 +30,8 @@ def create_app(config_class=Config):
     moment.init_app(app)
     print(os.path.dirname(os.path.abspath(__file__)))
     
-    cred_json = os.environ["FIREBASE_SERVICE_ACCOUNT"]
+    # cred_json = os.environ["FIREBASE_SERVICE_ACCOUNT"]
+    cred_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
     db_url = os.environ.get("FIREBASE_DB_URL")
 
     # init firebase (if not already initialized)

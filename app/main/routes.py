@@ -20,11 +20,12 @@ from app.main.firebase import (
     server_ts, SCENARIOS_PATH, TRIALS_PATH,
     ASSIGN_PATH, PARTIC_PATH
 )
-from app.main.catalog import list_scenarios, list_trials
-from app.main.assignments import create_participant_pid, assign_participant, get_assignment
+from app.main.catalog import list_scenarios, list_trials, build_catalog_for_sid
+from app.main.assignments2 import create_participant_pid, assign_participant, get_assignment
 from app.main.metrics import choose_and_increment_one
 from app.main.comparison import ensure_comparison_trials
 
+NUM = 32
 # @bp.route('/<string:page_name>')
 # def static_page(page_name):
 #     print('GET: ' + '%s.html' % ('/experiment/' + page_name))
@@ -152,7 +153,7 @@ def page_1_scenario():
     if not pid:
         # First visit → create pid, assign scenario+trials, then canonicalize URL
         pid = create_participant_pid()
-        scenario_id, trial_ids = assign_participant(pid, n_trials=30)
+        scenario_id, trial_ids = assign_participant(pid, n_trials=NUM)
         return redirect(url_for("main.page_1_scenario", pid=pid), code=302)
 
     # Has pid → use existing assignment or assign now if missing
@@ -162,10 +163,9 @@ def page_1_scenario():
 
     # Load scenario object for display
     scenario = rtdb.reference(f"{SCENARIOS_PATH}/{scenario_id}").get() or {}
-
-    # (Optional) also load trial objects if page 1 needs them immediately:
-    # trials_catalog = _list_trials()
-    # selected_trials = [trials_catalog[tid] for tid in trial_ids]
+    trials = rtdb.reference(f"/catalog/trials_by_scenario/{scenario_id}").get() 
+    if trials is None: 
+        build_catalog_for_sid(scenario_id) 
 
     return render_template(
         "experiment/1_scenario.html",
@@ -186,7 +186,7 @@ def page_2_WTP_task():
 
     scenario_id, trial_ids, comparison_trials = get_assignment(pid)
     if not scenario_id:
-        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=30)
+        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=NUM)
     # ensure_comparison_trials(pid, scenario_id)
     
     scenario = rtdb.reference(f"{SCENARIOS_PATH}/{scenario_id}").get() or {}
@@ -319,7 +319,7 @@ def page_3_LLM_task():
     scenario_id, trial_ids, comparison_trials = get_assignment(pid)
     if not scenario_id:
         # Edge case: pid exists but no assignment yet
-        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=30)
+        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=NUM)
 
     scenario = rtdb.reference(f"{SCENARIOS_PATH}/{scenario_id}").get() or {}
     
@@ -341,7 +341,7 @@ def page_3_LLM_task_chat():
 
     scenario_id, trial_ids, comparison_trials = get_assignment(pid)
     if not scenario_id:
-        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=30)
+        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=NUM)
 
     scenario = rtdb.reference(f"{SCENARIOS_PATH}/{scenario_id}").get() or {}
     
@@ -363,7 +363,7 @@ def page_4_comparison():
 
     scenario_id, trial_ids, comparison_trials = get_assignment(pid)
     if not scenario_id:
-        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=30)
+        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=NUM)
 
     scenario = rtdb.reference(f"{SCENARIOS_PATH}/{scenario_id}").get() or {}
     
@@ -385,7 +385,7 @@ def page_4_comparison_trial():
 
     scenario_id, trial_ids, comparison_trials = get_assignment(pid)
     if not scenario_id or not trial_ids:
-        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=30)
+        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=NUM)
 
     # Seed comparison trials once, under /assignments/{pid}/comparison_trials
     ensure_comparison_trials(pid, scenario_id)
@@ -480,7 +480,7 @@ def page_5_demographics():
 
     scenario_id, trial_ids, comparison_trials = get_assignment(pid)
     if not scenario_id:
-        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=30)
+        scenario_id, trial_ids, comparison_trials = assign_participant(pid, n_trials=NUM)
 
     scenario = rtdb.reference(f"{SCENARIOS_PATH}/{scenario_id}").get() or {}
 
