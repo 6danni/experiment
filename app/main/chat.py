@@ -38,8 +38,10 @@ def llm_send():
             prompt={
                 "id": "pmpt_68a792c45f448190bf767ed4133e253f0aedd092065c9099",
                 "version": "11",
+                
+
                 # "inputs": {"user_input": user_text, "pid": pid, "scenario_id": scenario_id}
-            }
+            },input = user_text
             # If your Prompt does NOT specify a default model, you may need:
             # , model="gpt-4.1-mini"
         )
