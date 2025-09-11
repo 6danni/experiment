@@ -68,7 +68,9 @@
     font-style: italic;
   }
 </style>
-
+<script id="page-context" type="application/json">
+  {{ {"pid": pid, "scenario_id": scenario_id} | tojson }}
+</script>
 <script>
   const ctx = JSON.parse(document.getElementById("page-context").textContent);
   const chatEl = document.getElementById("chat");
@@ -165,10 +167,23 @@
 
   loadHistory();
   const wtpIsSecond = {{ (task_order == 'llm_first') | tojson }};
-  function goToNextPage() {
+  async function goToNextPage() {
+    try {
+      await fetch("/api/llm/analyze_final", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pid: ctx.pid, scenario_id: ctx.scenario_id })
+      });
+    } catch (err) {
+      console.error("analyze_final failed:", err);
+    }
+
     window.location.href = wtpIsSecond
       ? {{ url_for_pid('main.page_2_WTP_task') | tojson }}  // WTP was second → go to comparison
       : {{ url_for_pid('main.page_4_comparison') | tojson }};  
       //   window.location.href = {{ url_for_pid('main.page_4_comparison') | tojson }};
+
+
+      
       }
 </script>
