@@ -73,6 +73,7 @@
           during each task and trial.</em
         >
       </p>
+      <!-- <a class="btn btn-primary" href="{{ url_for_pid('main.start_first_task') }}">Continue</a> -->
 
       <button onclick="goToNextPage()">Next</button>
     </div>
@@ -97,7 +98,7 @@
         textContainer.appendChild(p);
       });
       function goToNextPage() {
-        window.location.href = {{ url_for_pid('main.page_2_WTP_task') | tojson }};
+        window.location.href = {{ url_for_pid('main.start_first_task') | tojson }};
       }
     </script>
   </body>

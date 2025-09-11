@@ -162,10 +162,13 @@
           }
 
           // Advance: reload same route for next trial, or finish
+          const wtpIsSecond = {{ (task_order == 'llm_first') | tojson }};
           if (trial_index < total_trials) {
             window.location.href = {{ url_for_pid('main.page_2_WTP_task_trial') | tojson }};
           } else {
-            window.location.href = {{ url_for_pid('main.page_3_LLM_task') | tojson }};
+            window.location.href = wtpIsSecond
+            ? {{ url_for_pid('main.page_4_comparison') | tojson }}   // WTP was second → go to comparison
+            : {{ url_for_pid('main.page_3_LLM_task') | tojson }}; 
           }
       }
       function skipBid() {

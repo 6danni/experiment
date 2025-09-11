@@ -125,3 +125,25 @@ def assign_participant(pid: str, n_trials: int = N_TRIALS, entropy_min_bits: flo
         f"{PARTIC_PATH}/{pid}/assigned": {"scenario_id": sid, "trial_ids": chosen, "ts": server_ts()},
     })
     return sid, chosen
+
+COUNTS_TASK_ORDER = "/metrics/task_order_counts"
+
+TASK_ORDER_KEY = "task_order"
+TASK_ORDERS = ["wtp_first", "llm_first"]
+
+def ensure_task_order(pid: str) -> str:
+    """Ensure a pid has a balanced task order (wtp_first / llm_first)."""
+    existing = (rtdb.reference(f"{ASSIGN_PATH}/{pid}/{TASK_ORDER_KEY}").get() or "").strip()
+    if existing in TASK_ORDERS:
+        return existing
+
+    # Balanced pick via RTDB transaction counter
+    chosen = _choose_min_count(COUNTS_TASK_ORDER, TASK_ORDERS)
+
+    # Persist in both assignments and participants for convenience
+    rtdb.reference("/").update({
+        f"{ASSIGN_PATH}/{pid}/{TASK_ORDER_KEY}": chosen,
+        f"{PARTIC_PATH}/{pid}/{TASK_ORDER_KEY}": chosen,
+        f"{PARTIC_PATH}/{pid}/task_order_assigned_ts": server_ts(),
+    })
+    return chosen

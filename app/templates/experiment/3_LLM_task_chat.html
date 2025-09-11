@@ -164,7 +164,11 @@
   });
 
   loadHistory();
+  const wtpIsSecond = {{ (task_order == 'llm_first') | tojson }};
   function goToNextPage() {
-        window.location.href = {{ url_for_pid('main.page_4_comparison') | tojson }};
+    window.location.href = wtpIsSecond
+      ? {{ url_for_pid('main.page_2_WTP_task') | tojson }}  // WTP was second → go to comparison
+      : {{ url_for_pid('main.page_4_comparison') | tojson }};  
+      //   window.location.href = {{ url_for_pid('main.page_4_comparison') | tojson }};
       }
 </script>
