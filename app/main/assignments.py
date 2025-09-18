@@ -7,6 +7,7 @@ from app.main.firebase import (
 import random
 # from app.main.metrics import choose_and_increment_one
 from app.main.catalog import list_scenarios, list_trials
+from typing import Optional, List, Tuple, Dict, Any
 
 from app.main.comparison import ensure_comparison_trials, LEVELS
 
@@ -17,7 +18,7 @@ CYCLE_LAMBDA = 1               # each cell appears 3 times per completed cycle
 CRIT_ORDER = ["recommendation", "frequency", "missing", "coverage"]
 
 
-def get_assignment(pid: str) -> tuple[str | None, list[str] | None]:
+def get_assignment(pid: str) -> Tuple[Optional[str], Optional[List[str]], Optional[Dict[str, Any]]]:
     doc = rtdb.reference(f"{ASSIGN_PATH}/{pid}").get() or {}
     return (doc.get("scenario_id"), doc.get("trial_ids"), doc.get("comparison_trials"))
 

@@ -3,6 +3,7 @@ import math, random
 from typing import List, Tuple
 from firebase_admin import db as rtdb
 from app.main.firebase import server_ts, SCENARIOS_PATH, ASSIGN_PATH, PARTIC_PATH, COUNTS_SCEN
+from typing import Optional, List, Tuple, Dict, Any
 
 # if you still want this metadata in the assignment record:
 SCENARIO_TO_CRITERION = {"s1":"recommendation","s2":"coverage","s3":"frequency","s4":"missing"}
@@ -11,7 +12,7 @@ N_TRIALS = 32                 # divisible by 4
 ENTROPY_MIN_BITS = 2.5
 ENTROPY_RETRY_LIMIT = 25
 
-def get_assignment(pid: str) -> tuple[str | None, list[str] | None]:
+def get_assignment(pid: str) -> Tuple[Optional[str], Optional[List[str]], Optional[Dict[str, Any]]]:
     doc = rtdb.reference(f"{ASSIGN_PATH}/{pid}").get() or {}
     return (doc.get("scenario_id"), doc.get("trial_ids"), doc.get("comparison_trials"))
 

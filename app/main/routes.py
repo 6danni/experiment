@@ -51,7 +51,7 @@ def _inject_pid():
 
 @bp.route('/', methods=['GET', 'POST'])
 def root():
-    return redirect("/test")
+    return redirect("/0_landing")
 
 @bp.route('/test')
 def test():

@@ -168,14 +168,24 @@
   loadHistory();
   const wtpIsSecond = {{ (task_order == 'llm_first') | tojson }};
   async function goToNextPage() {
+    // try {
+    //   await fetch("/api/llm/analyze_final", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ pid: ctx.pid, scenario_id: ctx.scenario_id })
+    //   });
+    // } catch (err) {
+    //   console.error("analyze_final failed:", err);
+    // }
+
     try {
-      await fetch("/api/llm/analyze_final", {
+      await fetch("/api/llm/analyze_wtp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ pid: ctx.pid, scenario_id: ctx.scenario_id })
       });
     } catch (err) {
-      console.error("analyze_final failed:", err);
+      console.error("analyze_wtp failed:", err);
     }
 
     window.location.href = wtpIsSecond

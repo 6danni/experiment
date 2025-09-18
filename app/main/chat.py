@@ -1,4 +1,3 @@
-# routes.py (or llm.py)
 from flask import request, jsonify
 from openai import OpenAI
 from app.main import bp
@@ -123,10 +122,11 @@ def analyze_final():
     client = OpenAI(api_key=Config.OPENAI_API_KEY)
     resp = client.responses.create(
         prompt={
-            "id": "pmpt_68c246f0ac4c8197b49415db98fa9c700321f99fda2f516f",
+            "id": "pmpt_68c2d5fdb3448190bb4d52f2e05bb04800e286e5ad67df0c",
             "version": "1",
             # "variables": {
-            #     "conversation": transcript,
+            #     "trials": transcript,
+            #     ""
             # }
         },
         input = transcript
@@ -145,9 +145,62 @@ def analyze_final():
         "ts": server_ts(),
     }
 
-    ref(f"{ASSIGN_PATH}/{pid}/analysis").push(result_node)
+    ref(f"{ASSIGN_PATH}/{pid}/chat_analysis").push(result_node)
     return jsonify(result_node), 200
 
+@bp.post("/api/llm/analyze_wtp")
+def analyze_wtp():
+    body = request.get_json(silent=True) or {}
+    pid         = (body.get("pid") or "").strip()
+    scenario_id = (body.get("scenario_id") or "").strip() or None
+    assign_doc  = rtdb.reference(f"{ASSIGN_PATH}/{pid}").get() or {}
+    trial_ids   = [str(t) for t in (assign_doc.get("trial_ids") or [])]
+    if not pid:
+        return jsonify(error="BadRequest", detail="pid required"), 400
+    wtp_map = rtdb.reference(f"{PARTIC_PATH}/{pid}/scenarios/{sid}/trials").get() or {}
+
+    records = []
+    for i, tid in enumerate(trial_ids, start=1):
+        bid = (wtp_map.get(str(i)) or {}).get("bid")
+        if bid is None:
+            continue
+        node = rtdb.reference(f"/catalog/trials/{tid}").get() or {}
+        option = node.get("option", node) or {}
+        records.append({"index": i, "trial_id": tid, "bid": float(bid), "option": option})
+    print(records)
+    if not records:
+        return jsonify(error="NoData", detail="no completed WTP trials"), 400
+
+    # 1) Fetch ALL messages for this pid (and scenario if provided)
+    msgs = _fetch_messages(pid, scenario_id=scenario_id, limit=2000)
+    transcript = _render_transcript(msgs)
+    client = OpenAI(api_key=Config.OPENAI_API_KEY)
+    resp = client.responses.create(
+        prompt={
+            "id": "pmpt_68c246f0ac4c8197b49415db98fa9c700321f99fda2f516f",
+            "version": "2",
+            "variables": {
+                "trials_json": json.dumps(records, ensure_ascii=False)
+            }
+        },
+        input = transcript
+        
+    )
+    text = getattr(resp, "output_text", "") or ""
+    print(text)
+    
+    
+
+    result_node = {
+        "scenario_id": scenario_id,
+        "result_text": text,
+        "response_id": getattr(resp, "id", None),
+        # "usage": usage,
+        "ts": server_ts(),
+    }
+
+    ref(f"{ASSIGN_PATH}/{pid}/chat_wtp").push(result_node)
+    return jsonify(result_node), 200
 
 # @bp.post("/api/llm/run_action_continue")
 # def llm_run_action_continue():

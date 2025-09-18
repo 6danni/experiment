@@ -55,7 +55,7 @@
 
       <p>After submitting your bid:</p>
       <ul>
-        <li>A random price will be drawn</li>
+        <li>A price in the range of possible bids will be generated at random</li>
         <li>
           If your bid is equal to or greater than that price, you "buy" the
           dataset and pay the random price
@@ -68,16 +68,11 @@
       <p>
         After all bids are submitted,
         <strong>one trial will be randomly selected</strong> for a potential
-        cash bonus. A biased die will be rolled to determine your chance of
-        receiving the bonus, which depends on how much the selected dataset
-        improves model accuracy. You can earn
-        <strong>up to ${{maxBonus}}</strong>.
+        cash bonus. Your bonus will be determined based whether you manage to "buy" the dataset and how much the dataset improves model accuracy. If you do not bid high enough to buy the dataset at the generated price, then you have a X% chance to earn $Y and a 100-X% chance to earn $0. If you do buy the dataset at a price of $P, then you have an improved chance to win a bonus of $Y minus the price $P. Datasets that lead to better model performance improve the odds that you will gain a bonus.
       </p>
 
       <p>
-        This mechanism is designed to promote honest bidding. Your best strategy
-        is to bid the maximum amount you genuinely believe each dataset is worth
-        to your modeling process.
+        This procedure is designed to promote honest bidding. Your best strategy is to bid the maximum amount you genuinely believe each dataset is worth to the modeling process described in your scenario.
       </p>
       <button onclick="goToNextPage()">Next</button>
     </div>
