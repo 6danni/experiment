@@ -103,15 +103,63 @@
               p.textContent = paragraph;
               textContainer.appendChild(p);
             });
+            function toInt(val) {
+        if (val == null) return null;
+        if (typeof val === "number") return Math.round(val);
+        const s = String(val).trim().replace(/%/g, "");
+        const num = Number(s);
+        return Number.isFinite(num) ? Math.round(num) : null;
+      }
+
+      function formatPercent(val) {
+        const n = val;
+        return n == null ? "" : `${n}%`;
+      }
+
+      function formatCoverage(val) {
+        const n = val;
+        return n == null ? "" : `${n} potentially relevant data attributes`;
+        
+      }
+
+      function plural(n, word) {
+        return `${n} ${word}${n === 1 ? "" : "s"}`;
+      }
+
+      function formatFrequency(val) {
+        if (val == null || val === "") return "";
+
+        // Prefer explicit label if backend ever sends it
+        if (typeof val === "string" && /day/i.test(val)) return val;
+
+        // // Named frequency?
+        // const nameMatch = typeof val === "string" && FREQ_NAME_TO_DAYS[val];
+        // if (nameMatch)
+        //   return `${val} (${plural(FREQ_NAME_TO_DAYS[val], "day")})`;
+
+        // Numeric days (e.g., 7 or "7")
+        const n = toInt(val);
+        if (n != null) {
+          // const name = DAYS_TO_FREQ_NAME[String(n)];
+          return name ? `${name} (${plural(n, "day")})` : plural(n, "day");
+        }
+
+        // Fallback: show raw
+        return String(val);
+      }
 
             const info = document.getElementById("dataset-info");
+
+
+
+            
         info.innerHTML = `
           <h2>Dataset details for trial ${trial_index}</h2>
           <ul>
-            <li><strong>Recommended by:</strong> ${trial.recommendation ?? ""}</li>
+            <li><strong>Recommended by:</strong> ${formatPercent(trial.recommendation)}</li>
             <li><strong>Collection frequency:</strong> ${trial.frequency ?? ""}</li>
-            <li><strong>Missing data rate:</strong> ${trial.missing ?? ""}</li>
-            <li><strong>Coverage:</strong> ${trial.coverage ?? ""}</li>
+            <li><strong>Missing data rate:</strong> ${formatPercent(trial.missing) ?? ""}</li>
+            <li><strong>Coverage:</strong> ${formatCoverage(trial.coverage) ?? ""}</li>
           </ul>
         `;
 

@@ -116,6 +116,12 @@
         return `${n} ${word}${n === 1 ? "" : "s"}`;
       }
 
+      function formatCoverage(val) {
+        const n = val;
+        return n == null ? "" : `${n} potentially relevant data attributes`;
+        
+      }
+
       function formatFrequency(val) {
         if (val == null || val === "") return "";
 
@@ -147,7 +153,7 @@
           data.frequency_label ??
           formatFrequency(data.frequency ?? data.frequency_days);
         const miss = data.missing_label ?? formatPercent(data.missing);
-        const cov = data.coverage_label ?? formatPercent(data.coverage);
+        const cov = data.coverage_label ?? formatCoverage(toInt(data.coverage));
         return `
         <div class="dataset-card" data-label="${label}">
         <h3>Dataset ${label}</h3>
