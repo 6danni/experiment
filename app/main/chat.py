@@ -1,9 +1,11 @@
 from flask import request, jsonify
 from openai import OpenAI
 from app.main import bp
-from app.main.firebase import ref, server_ts, ASSIGN_PATH
+from app.main.firebase import ref, server_ts, ASSIGN_PATH, PARTIC_PATH
 from config import Config
 from typing import List, Dict, Any, Optional
+from firebase_admin import db as rtdb
+
 
 def _messages_path(pid: str) -> str:
     return f"{ASSIGN_PATH}/{pid}/messages"
